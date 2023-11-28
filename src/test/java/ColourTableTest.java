@@ -42,5 +42,11 @@ public class ColourTableTest {
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(3));
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(1025));
     }
-
+    @Test
+    public void testExceedCapacity() {
+        ColourTable colourTable = new ColourTable(2);
+        colourTable.add(255, 0, 0); // Red
+        colourTable.add(0, 255, 0); // Green
+        assertThrows(IllegalStateException.class, () -> colourTable.add(0, 0, 255)); // Blue
+    }
 }
