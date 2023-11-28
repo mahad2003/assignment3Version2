@@ -41,5 +41,5 @@ public class ColourTable {
                 rgbColor.getBlue() >= 0 && rgbColor.getBlue() <= 255;
     }
 }
-}
+
 
