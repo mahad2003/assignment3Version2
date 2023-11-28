@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ColourTableTest {
 
@@ -18,4 +19,12 @@ public class ColourTableTest {
         colourTable.add(0, 0, 255); // Blue
         assertEquals(3, colourTable.getNumberOfColors());
     }
+
+    @Test
+    public void testAddDuplicateColor() {
+        ColourTable colourTable = new ColourTable(4);
+        colourTable.add(255, 0, 0); // Red
+        assertThrows(IllegalStateException.class, () -> colourTable.add(255, 0, 0));
+    }
+
 }
