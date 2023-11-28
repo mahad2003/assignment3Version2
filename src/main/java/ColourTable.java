@@ -43,6 +43,11 @@ public class ColourTable {
     public int getNumberOfColors() {
         return colors.size();
     }
+
+    public void remove(int red, int green, int blue) {
+        RGBColor rgbColorToRemove = new RGBColor(red, green, blue);
+        colors.remove(rgbColorToRemove);
+    }
 }
 
 
