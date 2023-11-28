@@ -56,4 +56,16 @@ public class ColourTableTest {
         assertThrows(IllegalArgumentException.class, () -> colourTable.add(0, -1, 0)); // Invalid green value
         assertThrows(IllegalArgumentException.class, () -> colourTable.add(0, 0, 256)); // Invalid blue value
     }
+
+    @Test
+    public void testRemoveColor() {
+        ColourTable colourTable = new ColourTable(4);
+        colourTable.add(255, 0, 0); // Red
+        colourTable.add(0, 255, 0); // Green
+        colourTable.add(0, 0, 255); // Blue
+
+        colourTable.remove(255, 0, 0);
+        assertEquals(2, colourTable.getNumberOfColors());
+    }
 }
+
