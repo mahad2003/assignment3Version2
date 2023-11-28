@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class RGBColor {
     private final int red;
     private final int green;
@@ -27,5 +29,10 @@ public class RGBColor {
         if (o == null || getClass() != o.getClass()) return false;
         RGBColor rgbColor = (RGBColor) o;
         return red == rgbColor.red && green == rgbColor.green && blue == rgbColor.blue;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(red, green, blue);
     }
 }
