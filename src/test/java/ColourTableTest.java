@@ -35,4 +35,12 @@ public class ColourTableTest {
         assertDoesNotThrow(() -> new ColourTable(8));
         assertDoesNotThrow(() -> new ColourTable(1024));
     }
+
+    @Test
+    public void testInvalidPaletteSize() {
+        assertThrows(IllegalArgumentException.class, () -> new ColourTable(1));
+        assertThrows(IllegalArgumentException.class, () -> new ColourTable(3));
+        assertThrows(IllegalArgumentException.class, () -> new ColourTable(1025));
+    }
+
 }
