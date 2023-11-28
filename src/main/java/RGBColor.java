@@ -21,4 +21,11 @@ public class RGBColor {
         return blue;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RGBColor rgbColor = (RGBColor) o;
+        return red == rgbColor.red && green == rgbColor.green && blue == rgbColor.blue;
+    }
 }
