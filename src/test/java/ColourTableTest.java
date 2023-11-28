@@ -49,4 +49,11 @@ public class ColourTableTest {
         colourTable.add(0, 255, 0); // Green
         assertThrows(IllegalStateException.class, () -> colourTable.add(0, 0, 255)); // Blue
     }
+    @Test
+    public void testInvalidRGB() {
+        ColourTable colourTable = new ColourTable(4);
+        assertThrows(IllegalArgumentException.class, () -> colourTable.add(300, 0, 0)); // Invalid red value
+        assertThrows(IllegalArgumentException.class, () -> colourTable.add(0, -1, 0)); // Invalid green value
+        assertThrows(IllegalArgumentException.class, () -> colourTable.add(0, 0, 256)); // Invalid blue value
+    }
 }
