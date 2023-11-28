@@ -34,5 +34,12 @@ public class ColourTable {
             throw new IllegalStateException("Exceeded the capacity of the ColourTable");
         }
     }
+
+    private boolean isValidRGB(RGBColor rgbColor) {
+        return rgbColor.getRed() >= 0 && rgbColor.getRed() <= 255 &&
+                rgbColor.getGreen() >= 0 && rgbColor.getGreen() <= 255 &&
+                rgbColor.getBlue() >= 0 && rgbColor.getBlue() <= 255;
+    }
+}
 }
 
