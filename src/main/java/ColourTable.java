@@ -5,6 +5,8 @@ import java.util.Set;
 public class ColourTable {
 
     private final int paletteSize;
+
+    private final Set<RGBColor> colors = new HashSet<>();
     public ColourTable(int paletteSize) {
         if (!isValidPaletteSize(paletteSize)) {
             throw new IllegalArgumentException("Invalid palette size. Must be a power of two, greater than 1, and less than 1025");
