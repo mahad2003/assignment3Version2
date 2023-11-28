@@ -40,6 +40,10 @@ public class ColourTable {
                 rgbColor.getGreen() >= 0 && rgbColor.getGreen() <= 255 &&
                 rgbColor.getBlue() >= 0 && rgbColor.getBlue() <= 255;
     }
+
+    public int getNumberOfColors() {
+        return colors.size();
+    }
 }
 
 
