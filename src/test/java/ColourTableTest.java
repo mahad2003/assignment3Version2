@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class ColourTableTest {
 
@@ -27,4 +28,11 @@ public class ColourTableTest {
         assertThrows(IllegalStateException.class, () -> colourTable.add(255, 0, 0));
     }
 
+    @Test
+    public void testValidPaletteSize() {
+        assertDoesNotThrow(() -> new ColourTable(2));
+        assertDoesNotThrow(() -> new ColourTable(4));
+        assertDoesNotThrow(() -> new ColourTable(8));
+        assertDoesNotThrow(() -> new ColourTable(1024));
+    }
 }
