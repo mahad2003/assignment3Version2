@@ -48,6 +48,10 @@ public class ColourTable {
         RGBColor rgbColorToRemove = new RGBColor(red, green, blue);
         colors.remove(rgbColorToRemove);
     }
+
+    public void clear() {
+        colors.clear();
+    }
 }
 
 
