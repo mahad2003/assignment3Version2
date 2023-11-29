@@ -77,6 +77,16 @@ public class ColourTableTest {
         colourTable.remove(128, 128, 128); // Non-existent color
         assertEquals(3, colourTable.getNumberOfColors());
     }
+    @Test
+    public void testClearAllColors() {
+        ColourTable colourTable = new ColourTable(4);
+        colourTable.add(255, 0, 0); // Red
+        colourTable.add(0, 255, 0); // Green
+        colourTable.add(0, 0, 255); // Blue
+
+        colourTable.clear();
+        assertEquals(0, colourTable.getNumberOfColors());
+    }
 
 }
 
